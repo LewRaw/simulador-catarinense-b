@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador | Série B Catarinense 2024</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="container">
+    <header>
+      <h1>Simulador da 9ª Rodada</h1>
+      <p>Campeonato Catarinense - Série B</p>
+    </header>
+
+    <section id="painel-simulacao">
+      <h2>Jogos da Rodada</h2>
+      <div class="jogo">
+        <span class="time-casa">Juventus</span>
+        <div class="placar">
+          <input type="number" id="j1t1" min="0" placeholder="0">
+          <span>x</span>
+          <input type="number" id="j1t2" min="0" placeholder="0">
+        </div>
+        <span class="time-fora">Metropolitano</span>
+      </div>
+      <div class="jogo">
+        <span class="time-casa">Camboriú</span>
+        <div class="placar">
+          <input type="number" id="j2t1" min="0" placeholder="0">
+          <span>x</span>
+          <input type="number" id="j2t2" min="0" placeholder="0">
+        </div>
+        <span class="time-fora">Carlos Renaux</span>
+      </div>
+      <div class="jogo">
+        <span class="time-casa">Nação</span>
+        <div class="placar">
+          <input type="number" id="j3t1" min="0" placeholder="0">
+          <span>x</span>
+          <input type="number" id="j3t2" min="0" placeholder="0">
+        </div>
+        <span class="time-fora">Tubarão</span>
+      </div>
+      <div class="jogo">
+        <span class="time-casa">Porto</span>
+        <div class="placar">
+          <input type="number" id="j4t1" min="0" placeholder="0">
+          <span>x</span>
+          <input type="number" id="j4t2" min="0" placeholder="0">
+        </div>
+        <span class="time-fora">Fluminense-SC</span>
+      </div>
+      <div class="botoes-container">
+        <button class="btn-simular" onclick="simular()">Simular Rodada</button>
+        <button class="btn-limpar" onclick="resetarSimulacao()">Limpar</button>
+      </div>
+    </section>
+
+    <section id="painel-tabela">
+        <h2>Tabela de Classificação</h2>
+        <table>
+            <thead>
+            <tr>
+                <th class="pos">#</th>
+                <th class="time">Time</th>
+                <th>P</th>
+                <th>J</th>
+                <th>V</th>
+                <th>E</th>
+                <th>D</th>
+                <th>GP</th>
+                <th>GC</th>
+                <th>SG</th>
+                <th>%</th>
+            </tr>
+            </thead>
+            <tbody id="corpo-tabela"></tbody>
+        </table>
+        <div class="legenda">
+            <div class="legenda-item"><span class="cor-legenda semifinal"></span> Classificados para Semifinal</div>
+            <div class="legenda-item"><span class="cor-legenda segunda-fase"></span> Classificados para a 2ª Fase</div>
+            <div class="legenda-item"><span class="cor-legenda rebaixado"></span> Rebaixado</div>
+        </div>
+    </section>
+
+    <section id="regulamento">
+      <h2>Regulamento</h2>
+      <p>Os 2 primeiros colocados avançam para a Semifinal. Do 3º ao 6º colocado disputam a Segunda Fase. O último colocado é rebaixado.</p>
+      <p><strong>Critérios de desempate:</strong> 1º Mais vitórias; 2º Melhor saldo de gols; 3º Mais gols pró; 4º Confronto direto; 5º Menos cartões vermelhos; 6º Menos cartões amarelos; 7º Sorteio.</p>
+    </section>
+
+  </main>
+  
+  <footer>
+    <p>Simulador desenvolvido para fins de demonstração.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

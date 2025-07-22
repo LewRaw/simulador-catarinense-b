@@ -1,0 +1,202 @@
+:root {
+  --cor-primaria: #008037;
+  --cor-fundo: #f4f7f6;
+  --cor-painel: #ffffff;
+  --cor-texto: #333333;
+  --cor-texto-claro: #666666;
+  --cor-borda: #e0e0e0;
+  
+  --cor-semifinal: #d4edda;
+  --cor-segunda-fase: #cce5ff;
+  --cor-rebaixado: #f8d7da;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  flex: 1;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  margin: 0;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: var(--cor-texto-claro);
+  margin-top: 5px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--cor-texto);
+  border-bottom: 2px solid var(--cor-primaria);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#painel-simulacao, #painel-tabela, #regulamento {
+  background-color: var(--cor-painel);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.jogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.time-casa { text-align: right; flex-basis: 40%; }
+.time-fora { text-align: left; flex-basis: 40%; }
+
+.placar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cor-texto-claro);
+}
+
+input[type=number] {
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.botoes-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-simular {
+  background-color: var(--cor-primaria);
+  color: white;
+}
+.btn-limpar {
+  background-color: #6c757d;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+thead th {
+  font-weight: 700;
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+th.time, td.time { text-align: left; }
+th.pos, td.pos { font-weight: 700; }
+
+
+tbody tr.semifinal { background-color: var(--cor-semifinal); }
+tbody tr.segunda-fase { background-color: var(--cor-segunda-fase); }
+tbody tr.rebaixado { background-color: var(--cor-rebaixado); }
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.legenda {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 0.9rem;
+}
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cor-legenda {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+}
+.cor-legenda.semifinal { background-color: var(--cor-semifinal); border: 1px solid #b1dfbb;}
+.cor-legenda.segunda-fase { background-color: var(--cor-segunda-fase); border: 1px solid #b8daff;}
+.cor-legenda.rebaixado { background-color: var(--cor-rebaixado); border: 1px solid #f5c6cb;}
+
+
+#regulamento p {
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--cor-texto-claro);
+    background-color: #e9ecef;
+}
+
+@media (max-width: 768px) {
+  .jogo { flex-direction: column; gap: 10px; }
+  .legenda { flex-direction: column; gap: 10px; }
+  th, td { padding: 8px; font-size: 0.9rem; }
+  th.time, td.time {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
